@@ -1,9 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react"
+//import ReactDOM from 'react-dom'    version anterior
+import ReactDOM from "react-dom/client" 
 
-function App(){
-  return"Hola Mundo"
-}
 
-ReactDOM.render(<React.StrictMode><App /></React.StrictMode>, document.getElementById('root'))
+import App from "./components/App"  //importo la funcion App
 
+import "./scss/style.scss"  // importo los estilos de SCSS
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"))
+
+//ReactDOM.render(<App/>, document.getElementById("root"))
+
+root.render(<App/>)
