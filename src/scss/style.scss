@@ -1,30 +1,71 @@
-body {
-    background-color: rgb(77, 43, 43);
-    color: beige;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+thml, body, #root {
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+#root > main, #root > footer, #root > header {
+    padding: 1rem;
+}
+
+#root > header {
+    background-color: rgb(170, 36, 36);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#root > main{
+    background-color: white;
+    flex-grow: 1;
+    color: red;
+    text-align: center;
+    font-size: 30px;
+}
+.ItemListContainer{
+    margin-left: 70%;
+    padding: .5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(170, 36, 36);
+    color: white;
+    text-align: center;
+    height: auto;
+    width: 30%;
+    font-size: 20px;    
+}
+
+#root > footer{
+    background-color: rgb(139, 134, 134);
+    color: black;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .nav{
+    margin-left: 1rem;
     padding: 10px;
+    font-weight: bold;
     &__link{    
         text-decoration: none;
         color: black;
         padding: 10px;
     }
-}
-.header{
-    background-color: rgb(170, 36, 36);
-    color: beige;
-    text-align: center;
-}
-
-.footer{
-    background-color: rgb(139, 134, 134);
-    color: black;
-    text-align: center;
-}
-
-.main{
-    background-color: white;
-    color: red;
-    text-align: center;
-    font-size: 20px
+    &__link:hover{
+        background-color: rgb(170, 36, 36);
+        color: white;
+    }
 }
