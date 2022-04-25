@@ -5,9 +5,9 @@ import ItemListContainer from "./ItemListContainer"
 
 const App = () => {
     return <>     
-    <Header/>
-    <ItemListContainer/>
+    <Header/>    
     <Main/>
+    <ItemListContainer/>
     <Footer/>    
     </>
 }
