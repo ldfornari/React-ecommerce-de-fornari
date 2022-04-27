@@ -5,7 +5,7 @@
 }
 
 thml, body, #root {
-    height: 100vh;
+    height: 95vh;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -98,4 +98,52 @@ thml, body, #root {
         background-color: rgb(170, 36, 36);
         color: white;
     }
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 3px;
+    padding: 1rem;
+    box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.7);
+}
+.cardContainer{
+    display: grid;
+    margin: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2.5rem;
+}
+.card{
+    padding: 1rem;
+    box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    border-radius: 3px;
+    width:100%;
+    text-align: center;
+    img{
+        margin-top: 2rem;
+    }
+    button{
+        margin-top: 1rem;
+        padding: .5rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgb(170, 36, 36);
+        color: white;
+        text-align: center;
+        font-size: 1rem;
+        &:hover{
+            background-color: rgb(200, 36, 36);
+            color: black;
+            font-style: bold;
+        }
+    }
+    &:hover{
+        transform: scale(1.1);
+    }   
 }
