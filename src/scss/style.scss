@@ -30,7 +30,19 @@ thml, body, #root {
     background-color: white;
     color: rgb(170, 36, 36);
     text-align: center;
-    font-size: 30px;
+    h2{
+        color: rgb(170, 36, 36);
+        font-size: 1.8rem;
+    }
+    h3{
+        color: black;
+        font-size: 1.5rem;
+    }
+    p{
+        color: black;
+        font-size: 1rem;
+        font-weight: bold;
+    }
 }
 .ItemListContainer{
     margin-left: 70%;

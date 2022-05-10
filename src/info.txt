@@ -10,3 +10,17 @@ const root = ReactDOM.createRoot(document.getElementById("root"))
 
 
 root.render(<App/>)
+
+de item
+
+    switch(clickear){
+      case "1" : <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde hic dignissimos molestiae dolor totam id eaque quibusdam quisquam recusandae ab?</p>
+      break;
+      case "2" : <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde hic dignissimos molestiae dolor totam id eaque quibusdam quisquam recusandae ab? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde hic dignissimos molestiae dolor totam id eaque quibusdam quisquam recusandae ab?
+      </p>
+      break;
+      case "3" : <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde hic dignissimos molestiae dolor totam id eaque quibusdam quisquam recusandae ab? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde hic dignissimos molestiae dolor totam id eaque quibusdam quisquam recusandae ab? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde hic dignissimos molestiae dolor totam id eaque quibusdam quisquam recusandae ab?</p>
+      break;
+      default : <p>Seleccione ver más en cada producto </p>
+      break;
+    }
