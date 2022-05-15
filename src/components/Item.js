@@ -1,26 +1,26 @@
 import React from "react"
-
-
-const handleClick = ({product}) => {
-  return (
-    console.log("Hice Click")
-  ) 
-
-}
-console.log(handleClick)
+import { Link, useNavigate } from "react-router-dom"
 
 const Item = ({product}) => {
+
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    return (
+      navigate(`/productos/${product.id}`)
+    ) 
+  
+  }  
 
   return (  <>  
       <article className= "card">
         <h3>{product.name}</h3>
         <img src={product.image} alt="img-clock" width={200}/>    
         <p>Precio: $ {product.price}</p>
-        <p>Categorías: {product.category.map(categories=>{
-          return <span>{categories} {" "}</span>
-        })} </p> 
-        <button onClick={handleClick}>Ver más</button>       
-      </article> </>
+        <p>Categoría: {product.category}</p> 
+        <button onClick={handleClick} className="button">Ver más</button>    
+      </article> 
+      </>
       
   )
 }

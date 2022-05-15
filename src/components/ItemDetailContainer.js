@@ -2,25 +2,18 @@ import { useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail"
 import productsDataBase from "./products.json"
 import ClipLoader from "react-spinners/ClipLoader"
+import id from "./Item"
 import { db } from "./firebase"
 
 const ItemDetailContainer = () => {
 
     const [charging, setCharging] = useState(true)
     const [product, setProduct] = useState({})
-    
-
-    console.log(productsDataBase)
-   
 
     useEffect(() => {
       
-       const detailProduct = productsDataBase.filter((product)=>{return product.id === "1"})
+      const detailProduct = productsDataBase.filter((product)=>{return product.id === id})
       
-         console.log(detailProduct)
-         console.log(product.id)
-      
-
       const order = new Promise((res)=>{
         
          setTimeout(()=>{   
@@ -46,7 +39,7 @@ const ItemDetailContainer = () => {
       )
     }else{               
       return(    
-        <ItemDetail product={product} key={product[0].id} detail={product[0].detail}/>     
+        <ItemDetail product={product} key={product.id} detail={product.detail}/>     
       )   
     }
 }

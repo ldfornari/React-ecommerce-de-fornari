@@ -12,6 +12,7 @@ thml, body, #root {
 #root {
     display: flex;
     flex-direction: column;
+   
 }
 
 #root > main, #root > footer, #root > header {
@@ -24,6 +25,10 @@ thml, body, #root {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    h1 {
+        color: black;
+    }
+   	
 }
 
 #root > main{
@@ -98,6 +103,9 @@ thml, body, #root {
 }
 
 .nav{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
     margin-left: 1rem;
     padding: 10px;
     font-weight: bold;
