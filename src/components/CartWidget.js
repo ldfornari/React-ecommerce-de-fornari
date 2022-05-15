@@ -1,3 +1,5 @@
+import { db } from "./firebase"
+
 const CartWidget = () => {
     return (                 
         <span className="material-icons">shopping_cart</span>         

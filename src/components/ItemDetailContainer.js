@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail"
 import productsDataBase from "./products.json"
-
+import ClipLoader from "react-spinners/ClipLoader"
+import { db } from "./firebase"
 
 const ItemDetailContainer = () => {
 
@@ -13,13 +14,12 @@ const ItemDetailContainer = () => {
    
 
     useEffect(() => {
-
-
-       const detailProduct = productsDataBase.filter((producto)=>{return producto.id === id})
+      
+       const detailProduct = productsDataBase.filter((product)=>{return product.id === "1"})
       
          console.log(detailProduct)
          console.log(product.id)
-         console.log({id, test})
+      
 
       const order = new Promise((res)=>{
         
@@ -34,20 +34,21 @@ const ItemDetailContainer = () => {
             setCharging(false) 
          })
          
-   },[id, product.id])
+   },[product.id])
 
-   if (charging) {
+    if (charging) {
       return (
-         <p>Cargando detalles.......</p>
+        <>
+        <p>Cargando detalles.......</p>
+        <ClipLoader color= "red-100"/>
+        </>
+
       )
-   }else{               
-      return(
-         <>
-         <p>productos cargados</p>
-         <ItemDetail key={product.id} product={product}/>
-         </>
+    }else{               
+      return(    
+        <ItemDetail product={product} key={product[0].id} detail={product[0].detail}/>     
       )   
-   }
+    }
 }
 
 export default ItemDetailContainer
