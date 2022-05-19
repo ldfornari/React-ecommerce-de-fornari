@@ -5,6 +5,7 @@
     "price": 5000,
     "image": "https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-smart-band-pro/section06-01.png",
     "category": "smart-watches",
+    "stock": 15,
     "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nulla voluptates, quisquam doloribus ipsam nesciunt consequuntur, ab inventore quia ipsa expedita tempore nemo, dignissimos labore eos maxime totam distinctio assumenda!"
   },
   {
@@ -13,6 +14,7 @@
     "price": 6000,
     "image": "https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-smart-band-pro/section06-02.png",
     "category": "smart-phones",
+    "stock": 10,
     "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nulla voluptates, quisquam doloribus ipsam nesciunt consequuntur, ab inventore quia ipsa expedita tempore nemo, dignissimos labore eos maxime totam distinctio assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nulla voluptates, quisquam doloribus ipsam nesciunt consequuntur, ab inventore quia ipsa expedita tempore nemo, dignissimos labore eos maxime totam distinctio assumenda!"
   },
   {
@@ -21,6 +23,7 @@
     "price": 7000,
     "image": "https://i01.appmifile.com/webfile/globalimg/products/pc/redmi-smart-band-pro/section06-03.png",
     "category": "tablets",
+    "stock": 8,
     "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nulla voluptates, quisquam doloribus ipsam nesciunt consequuntur, ab inventore quia ipsa expedita tempore nemo, dignissimos labore eos maxime totam distinctio assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nulla voluptates, quisquam doloribus ipsam nesciunt consequuntur, ab inventore quia ipsa expedita tempore nemo, dignissimos labore eos maxime totam distinctio assumenda! Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam nulla voluptates, quisquam doloribus ipsam nesciunt consequuntur, ab inventore quia ipsa expedita tempore nemo, dignissimos labore eos maxime totam distinctio assumenda!"
   }
 ]

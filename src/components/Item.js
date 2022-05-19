@@ -7,7 +7,7 @@ const Item = ({product}) => {
 
   const handleClick = () => {
     return (
-      navigate(`/productos/${product.id}`)
+      navigate(`/product/${product.id}`)
     ) 
   
   }  
