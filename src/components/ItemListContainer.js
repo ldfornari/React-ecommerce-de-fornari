@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react"
 import ItemList from "./ItemList"
-//import productsDataBase from "./products.json"
 import ClipLoader from "react-spinners/ClipLoader"
 import { useParams } from "react-router-dom"
 import { db } from "./firebase"
-import { collection,query,where,getDocs} from 'firebase/firestore';
+import { collection,query,where,getDocs, getDoc, doc} from 'firebase/firestore'
 
 const ItemListContainer = () => {
 
@@ -14,35 +13,30 @@ const ItemListContainer = () => {
    
 
    useEffect(() => {
-      const itemCollection = collection(db,"products")
-      const queryCollection = getDocs(itemCollection)
-      
-      queryCollection
-      .then((res)=>{
-         const products = res.docs.map(doc=>{
-         console.log(doc.data())
-         const productsWithId = {...doc.data(),id:doc.id}
-         return productsWithId
-        })
 
-        setProducts(products)
-        setCharging(false) 
+      setCharging(true)
 
-      })
-      .catch(()=>{
-         console.log("Error")
-      })
-      .finally(()=>{
-         console.log("Finally")
-      })
-   },[])
-   if (charging) {
-      return (
-         <>
-         <p>Cargando productos.......</p>
-         <ClipLoader color= "red-100"/>
-         </>
-      )
+         const myCollection = collection(db,"products")
+         const itemQuery = nameCategory ? query(myCollection,where('category','==',nameCategory)) : myCollection
+         getDocs(itemQuery)
+
+         .then((data)=>{
+            setProducts(data.docs.map((doc)=>({id:doc.id,...doc.data()})))
+         })
+         .finally(()=>{
+            setCharging(false)
+         })
+
+
+  }, [nameCategory]) 
+
+  if (charging) {
+   return (
+      <>
+      <p>Cargando productos.......</p>
+      <ClipLoader color= "red-100"/>
+      </>
+   )
    }else{
       return(
          <ItemList products={products}/>     
@@ -51,17 +45,3 @@ const ItemListContainer = () => {
 }
 
 export default ItemListContainer
-
-
-
-
-
-
-
-      
-
-
-      
-
-  
-
