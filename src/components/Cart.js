@@ -1,23 +1,27 @@
 import React, { useContext } from 'react'
-//import { BsFillTrashFill } from 'react-icons/bs'
 import { context } from './CartContext'
+import { useNavigate } from "react-router-dom"
 
 const Cart = ({name, price, quantity, id}) => {
 
-  const {removeFromCart} = useContext(context)  
+  const {emptyCart} = useContext(context)
+  const {totalPrice, totalQuantity} = useContext(context)
+  const {cart} = useContext(context)
+
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    return navigate(`/`)
+  }
 
   return (  
-    <div>
-      
-      <h3>{name}</h3>
-      <p>Precio: ${price}</p>
-      <p>Cantidad: {quantity}</p>
-      <button className='btn-count' onClick={() => {removeFromCart(id)}}>
-{/*         
-        <BsFillTrashFill /> */}
-          
-      </button>
-    </div>    
+    <>      
+      <h3>Carrito{name}</h3>
+      <p>Total: ${totalPrice()}</p>
+      {totalQuantity()> 1 ? <p>Cantidades: {totalQuantity()}</p> : <p>Cantidad: {totalQuantity()}</p>}
+      {cart.length > 0 ? <button className="cartButton" onClick={emptyCart}>Vaciar carrito</button> : 
+      <button className="cartButton" onClick={handleClick}>Volver al inicio</button>}    
+    </>    
   )
 }
 export default Cart

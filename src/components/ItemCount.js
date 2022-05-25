@@ -21,8 +21,7 @@ const ItemCount = ({stock, initial, onClick}) => {
        }
     }
 
-    const addCart = () => {
-       
+    const addCart = () => {       
         setConfirmed(true)          
     }
 

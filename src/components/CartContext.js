@@ -3,54 +3,57 @@ import React, { createContext, useState } from 'react'
 export const context = createContext()
 const { Provider } = (context)
 
-const CustomProvider = ({children}) => {
+export const CustomProvider = ({defaultValue = [], children}) => {
 
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(defaultValue)
 
-    const addToCart = (item, quantity) => {
-        if(isInCart(item.id)) {
+    const addToCart = (product, quantity) => {
+        if(isInCart(product.id)) {
             const newCart = [...cart]
-            for (const elment of newCart) {
-                if(elment.id === item.id) {
-                    elment.quantity += quantity
+            for (const element of newCart) {
+                if(element.product.id === product.id) {
+                    product.quantity = product.quantity + quantity
                 }
             }
             setCart(newCart)
         } else {
-            setCart([...cart, {...item, quantity}])
+            setCart([...cart, {...product, quantity}])
         }
     }
 
     const removeFromCart = (id) => {
-        setCart(cart.filter(item => item.id !== id))
+        console.log(id)
+        setCart(cart.filter(product => product.id !== id))
     }
 
-    const empyCart = () => {
+    const emptyCart = () => {
         setCart([])
     }
 
-    const totalQuantity = () => {
-        return cart.reduce((acc, item) => acc + item.quantity, 0)
+    const totalQuantity = () => {        
+        return cart.reduce((acc, product) => acc + product.quantity, 0)       
     }
 
     const totalPrice = () => {
-        return cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
+        return cart.reduce((acc, product) => acc + product.price * product.quantity, 0)
     }
 
     const isInCart = (id) => {
-        return cart.some(item => item.id === id)
-    }    
+        return cart.some(product => product.id === id)
+    }   
+    
+    const contextValue = { 
+        cart,
+        addToCart,
+        removeFromCart,
+        emptyCart,
+        totalQuantity,
+        totalPrice,
+        isInCart
+    }
 
     return (
-        <Provider value={{ 
-            cart,
-            addToCart,
-            removeFromCart,
-            empyCart,
-            totalQuantity,
-            totalPrice,
-            isInCart
-        }}>
+        <Provider value={contextValue}>
             {children}
         </Provider>
     )

@@ -89,6 +89,17 @@ thml, body, #root {
         background-color: rgb(170, 36, 36);
         color: white;
     }
+    .cartWidget{
+        color: black;
+        font-size: 16px;
+        text-decoration: none;
+        white-space: nowrap;
+        word-wrap: normal;
+        :hover{
+            background-color: rgb(170, 36, 36);
+            color: white;
+        }
+    }
 }
 .modal{
     display: flex;
@@ -110,6 +121,7 @@ thml, body, #root {
     grid-gap: 2.5rem;
     text-align: center;
 }
+
 .card{
     display: flex;
     flex-direction: column;
@@ -172,4 +184,19 @@ thml, body, #root {
                 font-style: bold;
         }
     }      
+}
+.cartButton{
+    margin-top: 1rem;
+    padding: .5rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(102, 94, 94);
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    &:hover{
+        background-color: rgb(205, 195, 195);
+        color: black;
+        font-style: bold;
+    }    
 }
