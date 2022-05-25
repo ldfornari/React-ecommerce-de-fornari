@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import ItemList from "./ItemList"
 import ClipLoader from "react-spinners/ClipLoader"
 import { useParams } from "react-router-dom"

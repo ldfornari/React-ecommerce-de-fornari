@@ -1,3 +1,4 @@
+import React from 'react'
 import NavBar from './NavBar'
 import { Link, NavLink } from 'react-router-dom'
 

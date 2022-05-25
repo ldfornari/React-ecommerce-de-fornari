@@ -1,18 +1,23 @@
-import React from 'react'
-import ItemCount from './ItemCount'
-import { db } from "./firebase"
-import { collection,query,where,getDocs} from 'firebase/firestore';
+import React, { useContext } from 'react'
+//import { BsFillTrashFill } from 'react-icons/bs'
+import { context } from './CartContext'
 
+const Cart = ({name, price, quantity, id}) => {
 
-
-
-const Cart = () => {
-
-  <ItemCount />
+  const {removeFromCart} = useContext(context)  
 
   return (  
-    <div>Confirma carga de carrito!!!</div>    
+    <div>
+      
+      <h3>{name}</h3>
+      <p>Precio: ${price}</p>
+      <p>Cantidad: {quantity}</p>
+      <button className='btn-count' onClick={() => {removeFromCart(id)}}>
+{/*         
+        <BsFillTrashFill /> */}
+          
+      </button>
+    </div>    
   )
 }
-
 export default Cart

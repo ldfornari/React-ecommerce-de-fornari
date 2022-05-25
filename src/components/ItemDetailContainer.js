@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail"
 import { useParams } from "react-router-dom"
 import ClipLoader from "react-spinners/ClipLoader"
 import { db } from "./firebase"
-import { getDoc, doc} from 'firebase/firestore';
+import { getDoc, doc} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
 
@@ -19,13 +19,12 @@ const ItemDetailContainer = () => {
             getDoc(myProduct)
             
             .then((prod)=>{
-                setProduct({id:prod.id, ...prod.data()})
-
-            .catch(()=>{
-                console.log("Error")
+                setProduct({...prod.data(), id:prod.id})
             })
-
-            }).finally(() => {
+            .catch(()=>{
+              console.log("Error")
+            })
+            .finally(() => {
                 setCharging(false)
             }) 
     }, [id])

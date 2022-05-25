@@ -1,11 +1,10 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState }from 'react'
 import { Link } from 'react-router-dom'
 
 
 const ItemCount = ({stock, initial, onClick}) => {
 
-    const [count, setCount] = useState(+initial)
+    const [count, setCount] = useState(initial)
     const [confirmed, setConfirmed] = useState(false)
 
     const plusCount = () => {
@@ -23,14 +22,17 @@ const ItemCount = ({stock, initial, onClick}) => {
     }
 
     const addCart = () => {
+       
         setConfirmed(true)          
     }
 
-    const changeConfirmed = () => {
+    const changeConfirmed = () => {                
         setConfirmed(false) 
+        onClick(count)
     }
 
     const cancel= () => {
+        onClick(count)
         setConfirmed(false)
     }
  
