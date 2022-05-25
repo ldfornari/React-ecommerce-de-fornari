@@ -4,16 +4,16 @@ import Main from "./Main"
 import Footer from "./Footer"
 import { BrowserRouter } from "react-router-dom"
 import { CustomProvider } from "./CartContext"
-import { context } from "./CartContext"
+
 
 const App = () => {
 
   return (      
       <BrowserRouter>
-        <context.CustomProvider>    
+        <CustomProvider>    
           <Header/>    
           <Main/>
-        </context.CustomProvider>
+        </CustomProvider>
           <Footer/>        
       </BrowserRouter>      
   )
