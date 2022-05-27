@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import { context } from './CartContext'
 import { useNavigate } from "react-router-dom"
+import { CartView } from './CartView'
 
-const Cart = ({name, price, quantity, id}) => {
+export const Cart = ({name, price, quantity, id}) => {
 
   const {emptyCart} = useContext(context)
   const {totalPrice, totalQuantity} = useContext(context)
@@ -14,14 +15,21 @@ const Cart = ({name, price, quantity, id}) => {
     return navigate(`/`)
   }
 
-  return (  
-    <>      
-      <h3>Carrito{name}</h3>
-      <p>Total: ${totalPrice()}</p>
-      {totalQuantity()> 1 ? <p>Cantidades: {totalQuantity()}</p> : <p>Cantidad: {totalQuantity()}</p>}
-      {cart.length > 0 ? <button className="cartButton" onClick={emptyCart}>Vaciar carrito</button> : 
-      <button className="cartButton" onClick={handleClick}>Volver al inicio</button>}    
-    </>    
+  return ( 
+    <>
+      <section className='cartList' >
+        <CartView cart={cart}/>     
+      </section> <br/> 
+
+      {cart.length > 0 && <p>Precio Total: ${totalPrice()}</p>} <br/>
+      {totalQuantity()> 0 && <p>Cantidad Total: {totalQuantity()}</p>}
+
+      <div>
+        {cart.length > 0 ? <button className="cartButton" onClick={emptyCart}>Vaciar carrito</button> :  
+        <button className="cartButton" onClick={handleClick}>Volver al inicio</button>}     
+        {cart.length > 0 &&<button className="cartFinish">Terminar mi compra</button>}
+      </div>
+    </>
   )
 }
 export default Cart

@@ -10,8 +10,10 @@ const CartWidget = () => {
         <Link className="cartWidget" to="/cart">            
             <span className="material-icons">
                 shopping_cart
-            </span>                    
+            </span>
+            <span className="cartWidgetQuantity">                    
                 {totalQuantity() > 0 &&  totalQuantity()}
+            </span>
         </Link>           
     )
 }

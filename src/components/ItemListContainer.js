@@ -3,7 +3,7 @@ import ItemList from "./ItemList"
 import ClipLoader from "react-spinners/ClipLoader"
 import { useParams } from "react-router-dom"
 import { db } from "./firebase"
-import { collection,query,where,getDocs, getDoc, doc} from 'firebase/firestore'
+import { collection,query,where,getDocs } from 'firebase/firestore'
 
 const ItemListContainer = () => {
 
@@ -30,18 +30,18 @@ const ItemListContainer = () => {
 
   }, [nameCategory]) 
 
-  if (charging) {
-   return (
+
+   return charging ?    
       <>
       <p>Cargando productos.......</p>
       <ClipLoader color= "red-100"/>
       </>
-   )
-   }else{
-      return(
-         <ItemList products={products}/>     
-      )
-   }
+      : 
+      <>
+         {!nameCategory ? <h1>Nuestros Productos Destacados</h1> : <h1>{nameCategory}</h1>}
+         <ItemList products={products}/>
+      </>
+    
 }
 
 export default ItemListContainer

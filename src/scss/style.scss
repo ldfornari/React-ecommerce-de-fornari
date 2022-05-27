@@ -11,8 +11,7 @@ thml, body, #root {
 
 #root {
     display: flex;
-    flex-direction: column;
-   
+    flex-direction: column;   
 }
 
 #root > main, #root > footer, #root > header {
@@ -35,6 +34,7 @@ thml, body, #root {
     background-color: white;
     color: rgb(170, 36, 36);
     text-align: center;
+    // max-width: 70%;
     h2{
         color: rgb(170, 36, 36);
         font-size: 1.8rem;
@@ -59,9 +59,7 @@ thml, body, #root {
     color: white;
     text-align: center;
     height: auto;
-    width: 30%;
-    font-size: 20px;    
-    
+    font-size: 20px;     
 }
 
 #root > footer{
@@ -100,6 +98,12 @@ thml, body, #root {
             color: white;
         }
     }
+    .cartWidgetQuantity{          
+        color: black;
+        font-size: 14px;
+        font-weight: bolder;
+        text-decoration: none;        
+    }
 }
 .modal{
     display: flex;
@@ -115,25 +119,29 @@ thml, body, #root {
     box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.7);
 }
 .cardContainer{
-    display: grid;
-    margin: 3rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 2.5rem;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .card{
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
     align-items: center;
     padding: 1rem;
     box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.3);
     transition: all 0.3s;
     border-radius: 3px;
-    width:100%;
+    width: 40%;
     margin: 1rem 1rem 1rem 0;
     img{
         margin-top: 2rem;
+    }
+    p{
+        margin-top: 1rem;
+        max-width: 55%;
+        font-size: 1rem;
+        font-weight: bold;
     }
     button{
         margin-top: 1rem;
@@ -183,7 +191,65 @@ thml, body, #root {
                 color: black;
                 font-style: bold;
         }
+        .btnClear{
+            margin-top: 1rem;
+            padding: .5rem;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: rgb(102, 94, 94);
+            color: white;
+            text-align: center;
+            font-size: .7rem;
+            &:hover{
+                background-color: rgb(205, 195, 195);
+                color: black;
+                font-style: bold;
+            }
+        }        
     }      
+}
+.cartList{
+    display: flex;    
+    flex-direction: column;
+    flex-grow: 1;
+    align-content: space-between;
+      
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 1px 1px 1px 3px rgba(0, 0, 0, 0.3);
+   // transition: all 0.3s;
+    
+    border-radius: 3px;
+    margin: 1rem;
+    
+}
+.ItemCount{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .btn-less, .btn-plus{
+        margin: 10px;
+        padding: 2px 10px;
+        font-style: bold;
+    }
+    .btn-count{
+        margin: 10px;
+        padding: 2px 25px;
+        font-size: .9rem;
+        font-style: bold;
+    }
+    .btn-addCart{
+        padding: 10px 30px;
+        background-color: rgb(170, 36, 36);
+        color: white;
+        font-size: .9rem;
+        font-style: bold;
+        border-radius: 5px;}
+    .btn-addCart:hover{
+            background-color: rgb(200, 36, 36);
+            color: black;
+            font-style: bold;
+    }
 }
 .cartButton{
     margin-top: 1rem;
@@ -199,4 +265,47 @@ thml, body, #root {
         color: black;
         font-style: bold;
     }    
+}
+.cartFinish{
+    padding: .5rem;
+    margin-left: 1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(170, 36, 36);
+    color: white;
+    font-size: .9rem;
+    font-style: bold;
+    text-align: center;
+    font-size: 1rem;
+    &:hover{
+        background-color: rgb(200, 36, 36);
+        color: black;
+        font-style: bolder;
+    }
+}
+.itemContainer{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(200, 36, 36);
+    border-radius: 10px;
+    margin: 1rem;
+    padding-bottom: 1rem;
+    .cartView{
+        margin-top: 1rem;
+        padding: .5rem;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: rgb(102, 94, 94);
+        color: white;
+        text-align: center;
+        font-size: .7rem;
+        &:hover{
+            background-color: rgb(205, 195, 195);
+            color: black;
+            font-style: bold;
+        }    
+
+    }
+    
+        
 }

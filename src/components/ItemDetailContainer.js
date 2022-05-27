@@ -7,6 +7,8 @@ import { getDoc, doc} from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
 
+    
+
     const [charging, setCharging] = useState(true)
     const [product, setProduct] = useState({})
     const {id}  = useParams()
@@ -20,28 +22,25 @@ const ItemDetailContainer = () => {
             
             .then((prod)=>{
                 setProduct({...prod.data(), id:prod.id})
+                setCharging(false)
             })
             .catch(()=>{
               console.log("Error")
             })
             .finally(() => {
-                setCharging(false)
+                
             }) 
     }, [id])
 
-    if (charging) {
-      return (
-        <>
-        <p>Cargando detalles.......</p>
-        <ClipLoader color= "red-100"/>
+    return charging ? 
+      <>
+      <p>Cargando detalles...</p>
+      <ClipLoader color= "red-100"/>
+      </>
+      : <>
+          <h1>Nuestros {product.category}</h1>
+          <ItemDetail {...product}/>
         </>
-
-      )
-    }else{               
-      return(    
-        <ItemDetail {...product}/>
-      )   
-    }
 }
 
 export default ItemDetailContainer

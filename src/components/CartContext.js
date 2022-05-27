@@ -11,8 +11,8 @@ export const CustomProvider = ({defaultValue = [], children}) => {
         if(isInCart(product.id)) {
             const newCart = [...cart]
             for (const element of newCart) {
-                if(element.product.id === product.id) {
-                    product.quantity = product.quantity + quantity
+                if(element.id === product.id) {
+                    element.quantity = element.quantity + quantity
                 }
             }
             setCart(newCart)
