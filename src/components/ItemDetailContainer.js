@@ -3,7 +3,7 @@ import ItemDetail from "./ItemDetail"
 import { useParams } from "react-router-dom"
 import ClipLoader from "react-spinners/ClipLoader"
 import { db } from "./firebase"
-import { getDoc, doc} from 'firebase/firestore'
+import { getDoc, doc } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
 
@@ -12,6 +12,7 @@ const ItemDetailContainer = () => {
     const [charging, setCharging] = useState(true)
     const [product, setProduct] = useState({})
     const {id}  = useParams()
+   
 
     useEffect(() => {
 

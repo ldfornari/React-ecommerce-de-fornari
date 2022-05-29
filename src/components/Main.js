@@ -8,7 +8,6 @@ import Cart from './Cart'
 const Main = () => {
     return (
         <main className="main">
-            {/* <h2>Productos destacados</h2> */}
             <Routes>
                 <Route path="/" element={<ItemListContainer/>} />
                 <Route path="/products/:nameCategory" element={<ItemListContainer/>} />
