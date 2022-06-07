@@ -7,12 +7,9 @@ import { getDoc, doc } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
 
-    
-
     const [charging, setCharging] = useState(true)
     const [product, setProduct] = useState({})
-    const {id}  = useParams()
-   
+    const {id}  = useParams()   
 
     useEffect(() => {
 

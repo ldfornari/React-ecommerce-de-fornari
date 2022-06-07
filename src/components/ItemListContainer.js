@@ -26,22 +26,20 @@ const ItemListContainer = () => {
          .finally(()=>{
             setCharging(false)
          })
+  }, [nameCategory])
 
-
-  }, [nameCategory]) 
-
-
-   return charging ?    
+   return (
+      charging ?    
       <>
       <p>Cargando productos.......</p>
       <ClipLoader color= "red-100"/>
       </>
       : 
       <>
-         {!nameCategory ? <h1>Nuestros Productos Destacados</h1> : <h1>{nameCategory}</h1>}
-         <ItemList products={products}/>
-      </>
-    
+      {!nameCategory ? <h1>Nuestros Productos Destacados</h1> : <h1>{nameCategory}</h1>}
+      <ItemList products={products}/>
+      </> 
+   )   
 }
 
 export default ItemListContainer

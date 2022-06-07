@@ -1,13 +1,13 @@
 import React, { useState, useContext }from 'react'
-import { context } from './CartContext'
+import { cartContext } from './CartContext'
 
 const ItemCount = ({stock, id, initial, onClick }) => {
 
     const [count, setCount] = useState(initial)
     const [confirmed, setConfirmed] = useState(false)
 
-    const {removeFromCart} = useContext(context)
-    const {cart} = useContext(context)
+    const {removeFromCart} = useContext(cartContext)
+    const {cart} = useContext(cartContext)
 
 
     const plusCount = () => {

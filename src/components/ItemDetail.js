@@ -1,10 +1,10 @@
 import React, { useContext }  from "react" 
 import ItemCount from "./ItemCount"
-import { context } from "./CartContext"
+import { cartContext } from "./CartContext"
 
 const ItemDetail = (product) => {
 
-    const { addToCart } = useContext(context)
+    const { addToCart } = useContext(cartContext)
     
     const onClick = (quantity) => {
         addToCart(product, quantity)
