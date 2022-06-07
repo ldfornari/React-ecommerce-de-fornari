@@ -28,7 +28,8 @@ La aplicación se puede visualizar en:
 
 https://github.com/ldfornari/React-ecommerce-de-fornari
 
-https://react-ecommerce-de-fornari.netlify.app
+https://react-ecommerce-de-fornari.vercel.app
+
 
 
 ## Instalación:
